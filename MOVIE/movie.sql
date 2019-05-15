@@ -1,5 +1,5 @@
 
-CREATE TABLE Order(
+CREATE TABLE Orders(
 	Order_id	INTEGER NOT NULL,
 	Customer_id	INTEGER NOT NULL UNIQUE,
 	Total	NUMERIC(8,2),
@@ -88,5 +88,5 @@ ALTER TABLE Customer ADD CONSTRAINT fk1_Customer_to_Cust_category FOREIGN KEY(fk
 ALTER TABLE Order_details ADD CONSTRAINT fk2_Order_details_to_Order FOREIGN KEY(Order_idOrder_id) REFERENCES Order(Order_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 
-ALTER TABLE Order ADD CONSTRAINT fk1_Order_to_Customer FOREIGN KEY(fk1_Customer_id) REFERENCES Customer(Customer_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE Orders ADD CONSTRAINT fk1_Order_to_Customer FOREIGN KEY(fk1_Customer_id) REFERENCES Customer(Customer_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
